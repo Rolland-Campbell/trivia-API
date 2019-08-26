@@ -22,4 +22,9 @@ export default class triviaController {
   showAnswer() {
     _drawAnswer()
   }
+
+  nextQuestion() {
+    _triviaService.getNewTriviaQuestion()
+    _draw()
+  }
 }

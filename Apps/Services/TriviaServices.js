@@ -39,4 +39,12 @@ export default class TriviaServices {
         _setState("question", question)
       })
   }
+
+  getNewTriviaQuestion() {
+    _triviaApi.get()
+      .then(res => {
+        let question = new Question(res.data[5])
+        _setState("question", question)
+      })
+  }
 }
