@@ -24,6 +24,10 @@ export default class TriviaServices {
     return _state.question
   }
 
+  get Answer() {
+    return _state.question
+  }
+
   addSubscriber(prop, fn) {
     _subscribers[prop].push(fn)
   }
