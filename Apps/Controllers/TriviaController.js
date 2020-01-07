@@ -13,6 +13,11 @@ function _drawAnswer() {
   document.getElementById("answer").innerHTML = answer.answerTemplate
 }
 
+function _clearAnswer() {
+  let answer = _triviaService.Question
+  document.getElementById("answer").innerHTML = ""
+}
+
 export default class triviaController {
   constructor() {
     _triviaService.addSubscriber("question", _draw)
@@ -25,6 +30,7 @@ export default class triviaController {
 
   nextQuestion() {
     _triviaService.getNewTriviaQuestion()
+    _clearAnswer()
     _draw()
   }
 }

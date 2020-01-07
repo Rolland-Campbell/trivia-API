@@ -35,7 +35,7 @@ export default class TriviaServices {
   getTriviaQuestion() {
     _triviaApi.get()
       .then(res => {
-        let question = new Question(res.data[0])
+        let question = new Question(res.data[Math.floor(Math.random() * 100)])
         _setState("question", question)
       })
   }
@@ -43,7 +43,7 @@ export default class TriviaServices {
   getNewTriviaQuestion() {
     _triviaApi.get()
       .then(res => {
-        let question = new Question(res.data[5])
+        let question = new Question(res.data[Math.floor(Math.random() * 100)]);
         _setState("question", question)
       })
   }
