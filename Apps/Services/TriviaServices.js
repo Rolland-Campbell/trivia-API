@@ -32,6 +32,13 @@ export default class TriviaServices {
     _subscribers[prop].push(fn)
   }
 
+  outcome(answer) {
+    let questionAnswer = _state.question.answer
+    if (questionAnswer == answer) {
+      return "Correct!"
+    } else return "Sorry wrong answer, no points awarded. Press Next Question to try again."
+  }
+
   getTriviaQuestion() {
     _triviaApi.get()
       .then(res => {

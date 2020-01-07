@@ -9,12 +9,14 @@ function _draw() {
 }
 
 function _drawChoice(playerAnswer) {
-  document.getElementById("choice").innerHTML = 'Your final answer was ' + playerAnswer + ', click the see answer button to see if you are correct'
+  document.getElementById("choice").innerHTML = 'Your final answer was ' + playerAnswer + ', click the answer button to see if you are correct'
 }
 
 function _drawAnswer() {
   let answer = _triviaService.Question
   document.getElementById("answer").innerHTML = answer.answerTemplate
+  let outcome = _triviaService.outcome(playerAnswer)
+  document.getElementById("outcome").innerHTML = outcome
 }
 
 function _clearAnswer() {
@@ -22,22 +24,21 @@ function _clearAnswer() {
   document.getElementById("answer").innerHTML = ""
 }
 
+let playerAnswer = ""
+
 export default class triviaController {
   constructor() {
     _triviaService.addSubscriber("question", _draw)
     _triviaService.getTriviaQuestion()
   }
 
-  checkAnswer(event) {
+  showAnswer(event) {
     event.preventDefault();
-    let playerAnswer = event.target.answer.value
+    playerAnswer = event.target.answer.value
     _drawChoice(playerAnswer)
   }
 
-  showAnswer(event) {
-    event.preventDefault();
-
-    _triviaService.outcome()
+  checkAnswer() {
     _drawAnswer()
   }
 

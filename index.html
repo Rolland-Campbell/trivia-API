@@ -22,7 +22,7 @@
         <div id="question">
         </div>
         <div class="row mt-4">
-          <form class="col" onsubmit="app.controllers.triviaController.checkAnswer(event)">
+          <form class="col" onsubmit="app.controllers.triviaController.showAnswer(event)">
             <label>Enter your answer here</label>
             <input type="text" name="answer" />
             <button class="btn btn-warning"> Final
@@ -32,18 +32,19 @@
         <div class="mt-4" id="choice"></div>
         <div class="row">
           <div class="col">
-            <button onclick="app.controllers.triviaController.showAnswer(event)" class="btn-primary mt-5">See the answer
+            <button onclick="app.controllers.triviaController.checkAnswer(event)" class="btn-primary mt-5">Answer
             </button>
           </div>
         </div>
         <div class="row">
           <div class="col mt-5">
             <div id="answer"></div>
+            <div class="mt-4" id="outcome"></div>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <button onclick="app.controllers.triviaController.nextQuestion(event)" class="btn-success mt-5">Skip
+            <button onclick="app.controllers.triviaController.nextQuestion(event)" class="btn-success mt-5">Next
               Question</button>
           </div>
         </div>
