@@ -16,7 +16,7 @@ function _setState(propName, data) {
 
 // @ts-ignore
 let _triviaApi = axios.create({
-  baseURL: "http://jservice.io/api/clues"
+  baseURL: "//jservice.io/api/clues"
 })
 
 let host = document.querySelector(".hostPic")
