@@ -29,11 +29,13 @@
       </div>
       <!-- right side -->
       <div class="col-4">
-        <div class="row">
-          <form sonsubmit="app.controllers.triviaController.showAnswer(event)">
-            <label>Enter your answer here</label>
+        <div class="row mt-4">
+          <form onsubmit="app.controllers.triviaController.showAnswer(event)">
+            <label class="text-white">Enter your answer here</label>
             <input type="text" name="answer" />
           </form>
+        </div>
+        <div class="row">
           <div class="mt-4 text-white" id="choice"></div>
         </div>
         <div class="row">
@@ -44,8 +46,8 @@
         </div>
         <div class="row">
           <div class="col mt-5">
-            <div id="answer"></div>
-            <div class="mt-4" id="outcome"></div>
+            <div class="text-white" id="answer"></div>
+            <div class="mt-4 text-white" id="outcome"></div>
           </div>
         </div>
         <div class="row">
