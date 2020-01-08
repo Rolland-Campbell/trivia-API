@@ -10,7 +10,9 @@ export default class Question {
   get Template() {
     return `
     "The category is <b>${this.category} </b>"<br>
+    <br>
         "The question is worth <b>$${this.value}</b>"<br>
+        <br>
         "${this.question}"
         `
   }

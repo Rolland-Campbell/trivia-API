@@ -1,3 +1,7 @@
+body {
+  background-color: cornflowerblue;
+}
+
 button {
   border-radius: 50px;
 }
@@ -9,7 +13,6 @@ button {
 }
 
 .topRow{
-  background-color: cornflowerblue;
   justify-content: space-evenly;
   padding: 4px;
 }
@@ -17,8 +20,36 @@ button {
 .moneyBag {
   height: 100px;
   width: 100px;
+  display: flex;
+  margin: auto;
 }
 
 .amount {
 font-size: 80px;
+}
+
+.card-img-top {
+  height: 50vh;
+  width: 30vh;
+  margin: auto;
+}
+
+.hostPic {
+  background-image: url(./host.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.wrongPic {
+  background-image: url(./SithLordZach.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.correctPic {
+  background-image: url(./money_win.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
 }

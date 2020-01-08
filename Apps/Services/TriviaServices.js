@@ -19,6 +19,7 @@ let _triviaApi = axios.create({
   baseURL: "http://jservice.io/api/clues"
 })
 
+let host = document.querySelector(".hostPic")
 
 export default class TriviaServices {
   get Question() {
@@ -36,10 +37,13 @@ export default class TriviaServices {
   outcome(answer) {
     let questionAnswer = _state.question.answer
     let points = _state.question.value
-    if (questionAnswer == answer) {
+    debugger
+    if (questionAnswer.toLowerCase().includes(`${answer}`)) {
       _state.bank += points
+      host.classList.replace('hostPic', 'correctPic')
       return "Correct! You won $" + _state.question.value + ", Press Next Question to play more!"
-    } else return "Sorry wrong answer, no points awarded. Press Next Question to try again."
+    } else host.classList.replace('hostPic', 'wrongPic')
+    return "Sorry wrong answer, no points awarded. Press Next Question to try again."
   }
 
   getTriviaQuestion() {
@@ -55,6 +59,8 @@ export default class TriviaServices {
       .then(res => {
         let question = new Question(res.data[Math.floor(Math.random() * 100)]);
         _setState("question", question)
+        host.classList.replace('wrongPic', 'hostPic')
+        host.classList.replace('correctPic', 'hostPic')
       })
   }
 

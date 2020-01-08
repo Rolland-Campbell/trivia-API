@@ -21,7 +21,7 @@ function _drawAnswer() {
 
 function _drawBank() {
   let amount = _triviaService.showBank()
-  document.getElementById("bank").innerHTML = amount.toString()
+  document.getElementById("bank").innerHTML = "$" + amount.toString()
 }
 
 function _clearAnswer() {
