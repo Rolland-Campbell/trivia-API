@@ -37,7 +37,6 @@ export default class TriviaServices {
   outcome(answer) {
     let questionAnswer = _state.question.answer
     let points = _state.question.value
-    debugger
     if (questionAnswer.toLowerCase().includes(`${answer}`)) {
       _state.bank += points
       host.classList.replace('hostPic', 'correctPic')
