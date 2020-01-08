@@ -1,7 +1,8 @@
 import Question from "../Models/Questions.js"
 
 let _state = {
-  question: []
+  question: [],
+  bank: 0
 }
 
 let _subscribers = {
@@ -34,8 +35,10 @@ export default class TriviaServices {
 
   outcome(answer) {
     let questionAnswer = _state.question.answer
+    let points = _state.question.value
     if (questionAnswer == answer) {
-      return "Correct!"
+      _state.bank += points
+      return "Correct! You won $" + _state.question.value + ", Press Next Question to play more!"
     } else return "Sorry wrong answer, no points awarded. Press Next Question to try again."
   }
 
@@ -53,5 +56,9 @@ export default class TriviaServices {
         let question = new Question(res.data[Math.floor(Math.random() * 100)]);
         _setState("question", question)
       })
+  }
+
+  showBank() {
+    return _state.bank
   }
 }

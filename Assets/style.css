@@ -1,3 +1,24 @@
 button {
   border-radius: 50px;
 }
+
+.questionCard {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.topRow{
+  background-color: cornflowerblue;
+  justify-content: space-evenly;
+  padding: 4px;
+}
+
+.moneyBag {
+  height: 100px;
+  width: 100px;
+}
+
+.amount {
+font-size: 80px;
+}

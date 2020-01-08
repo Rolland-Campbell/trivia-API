@@ -19,9 +19,16 @@ function _drawAnswer() {
   document.getElementById("outcome").innerHTML = outcome
 }
 
+function _drawBank() {
+  let amount = _triviaService.showBank()
+  document.getElementById("bank").innerHTML = amount.toString()
+}
+
 function _clearAnswer() {
   let answer = _triviaService.Question
   document.getElementById("answer").innerHTML = ""
+  document.getElementById("outcome").innerHTML = ""
+  document.getElementById("choice").innerHTML = ""
 }
 
 let playerAnswer = ""
@@ -30,6 +37,7 @@ export default class triviaController {
   constructor() {
     _triviaService.addSubscriber("question", _draw)
     _triviaService.getTriviaQuestion()
+    _triviaService.showBank()
   }
 
   showAnswer(event) {
@@ -40,6 +48,7 @@ export default class triviaController {
 
   checkAnswer() {
     _drawAnswer()
+    _drawBank()
   }
 
   nextQuestion(event) {
